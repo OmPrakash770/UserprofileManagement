@@ -4,7 +4,7 @@ import { dataSource } from "src/main";
 import { Users } from "./entities/users.entity";
 import { CreateUserProfileDto } from "./dtos/create-userprofile.dto";
 import { UserProfile } from "./entities/userprofile.entity";
-import { ProfileLog } from "./entities/profilelog.entity";
+import { ProfileLog } from "./entities/Profilelog.entity";
 
 @Injectable()
 export class UserprofileService{
