@@ -4,6 +4,8 @@ import { CreateUsersDto } from "./dtos/create-users.dto";
 import {Response} from 'express';
 import { FileInterceptor } from "@nestjs/platform-express";
 import { CreateUserProfileDto } from "./dtos/create-userprofile.dto";
+import { Express}  from "express";
+import {Multer} from "multer";
 
 
 @Controller('v1/api')
