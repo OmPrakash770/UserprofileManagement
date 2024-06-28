@@ -50,6 +50,8 @@ export let dataSource: DataSource;
 async function bootstrap() {
   let app: NestExpressApplication;
 
+  const port = 3000;
+
   try {
     dataSource = await connectDatabase(entities);
     if (!dataSource) {
@@ -62,7 +64,10 @@ async function bootstrap() {
     app.useGlobalPipes(new ValidationPipe());
 
     // Enable CORS with default settings
-    app.enableCors();
+    app.enableCors({
+      credentials: true,
+      origin: ['http://localhost:3001', 'http://localhost:80'] // Whitelist the domains you want to allow
+    });
 
     // Enable CORS with specific settings (uncomment and customize as needed)
     /*
@@ -72,8 +77,12 @@ async function bootstrap() {
       credentials: true,
     });
     */
+    
 
-    await app.listen(3000, '0.0.0.0');
+    await app.listen(port, '0.0.0.0', () => {
+      console.log(`Server running at http://0.0.0.0:${port}/`);
+     });
+  
   } catch (error: any) {
     if (app) app.close();
     process.exit(1);
