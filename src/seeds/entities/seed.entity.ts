@@ -9,6 +9,7 @@ import { UserProfile } from "src/userprofile/entities/userprofile.entity";
 import { Users } from "src/userprofile/entities/users.entity";
 
 
+
 export const entities = [
     User,
     UserDetail,

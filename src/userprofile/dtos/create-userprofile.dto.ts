@@ -1,5 +1,6 @@
 import { IsNotEmpty, IsOptional, IsString, IsInt } from 'class-validator';
 
+
 export class CreateUserProfileDto {
   @IsString()
   @IsOptional()

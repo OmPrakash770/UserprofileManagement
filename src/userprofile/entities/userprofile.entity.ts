@@ -2,6 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from 'ty
 import { Users } from './users.entity';
 import { ProfileLog } from './profilelog.entity';
 
+
 @Entity()
 export class UserProfile {
   @PrimaryGeneratedColumn()
