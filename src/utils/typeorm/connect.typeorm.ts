@@ -1,5 +1,7 @@
 
-import { DataSource } from "typeorm"
+import { DataSource } from "typeorm";
+import 'dotenv/config';
+
 
 export async function connectDatabase(entityArray: any) : Promise<any>{
  
