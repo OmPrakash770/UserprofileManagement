@@ -58,6 +58,7 @@ export class UserprofileService{
         await queryRunner.connect();
         try {
             const user = await queryRunner.manager.findOne(Users, { where: { username } });
+            console.log("user:",user);
 
             if (!user) {
                 return {
